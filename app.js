@@ -1,6 +1,10 @@
-mkdir node-app-day3 && cd node-app-day3
+const http = require('http');
 
-npm init -y
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Welcome to Node App Day 3!\n');
+});
 
-# Create app.js
-echo "console.log('Hello from optimized Docker image!');" > app.js
+server.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
